@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="column-1">
+
+            <div class="background">
+                <img src="halie-west-25xggax4bSA-unsplash.jpg"
+                    alt="background image: green-leaf-plant-in-close-up-photography" />
+
+                <div class="logo-container">
+                    <img src="odin-lined.png" alt="odin-logo" />
+                    <div class="overlay">
+                        <h1>ODIN</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-credits">
+                <p>Photo by <a
+                        href="https://unsplash.com/@haliewestphoto?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Halie
+                        West</a> on <a
+                        href="https://unsplash.com/photos/green-leaf-plant-in-close-up-photography-25xggax4bSA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+                </p>
+            </div>
+        </div>
+
+
+
+
+        <div class="column-2">
+
+            <div class="description">
+                <p>This is not a real online service! You know you need something like this in your life to help you
+                    realize your deepest dreams. <br /> Sign up <em>now</em> to get started.
+                </p>
+                <p>
+                    You <em>know</em> you want to.
+                </p>
+            </div>
+
+            <div class="form-wrapper">
+                <h2>Let's do this!</h2>
+                <form action="/signup-form" method="post">
+
+                    <div class="input-row">
+                        <div class="input-block">
+                            <label for="user_first_name">First Name</label>
+                            <input type="text" id="user_first_name" name="first_name" />
+                        </div>
+                        <div class="input-block">
+                            <label for="user_last_name">Last Name</label>
+                            <input type="text" id="user_last_name" name="last_name" />
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-block">
+                            <label for="user_email">Email</label>
+                            <input type="email" class="email" id="user_email" name="email" required>
+                        </div>
+                        <div class="input-block">
+                            <label for="user_phone_number">Phone Number</label>
+                            <input type="tel" class="phone" id="user_phone_number" name="phone">
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-block">
+                            <label for="user_password">Password</label>
+                            <input type="password" class="password" id="user_password" name="password" required>
+                        </div>
+                        <div class="input-block">
+                            <label for="user_confirm_password">Confirm Password</label>
+                            <input type="password" class="confirm-password" id="user_confirm_password"
+                                name="confirm_password" required>
+                        </div>
+                    </div>
+
+            </div>
+
+            <div class="after-form">
+                <p>
+                    <button type="submit">Create Account</button>
+                </p>
+                </form>
+
+                <p>Already have an account? <span class="login-link">Log in</span></p>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
