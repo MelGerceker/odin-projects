@@ -1,48 +1,82 @@
 body,
 html {
-  height: 100%;
-  margin: 0;
+    height: 100%;
+    margin: 0;
 }
 
 .container {
-  text-align: center;
-  height: 100%;
-  padding: 16px;
-  box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 1fr 5fr 1fr;
+    gap: 15px;
+
+    text-align: center;
+    height: 100%;
+    padding: 16px;
+    box-sizing: border-box;
 }
 
 .container div {
-  padding: 15px;
-  font-size: 32px;
-  font-family: Helvetica;
-  font-weight: bold;
-  color: white;
-  border-radius: 15px;
+    padding: 15px;
+    font-size: 32px;
+    font-family: Helvetica;
+    font-weight: bold;
+    color: white;
+    border-radius: 15px;
 }
 
 .header {
-  background-color: #006157;
+    background-color: #006157;
+
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 
 .sidebar {
-  background-color: #005B94;
+    background-color: #005B94;
+
+    grid-column-start: 1;
+    grid-column-end: 2;
+
+    grid-row: 2 / 4;
 }
 
 .nav {
-  background-color: #642cde;
+    background-color: #642cde;
+
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+    grid-row: 2 / 3;
 }
 
 .article {
-  background-color: #7E1DC3;
+    background-color: #7E1DC3;
+
+
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+    grid-row: 3 / 4;
 }
 
 .footer {
-  background-color: #393f4d;
+    background-color: #393f4d;
+
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    grid-row-start: 4;
+    grid-row-end: 5;
 }
 
 .article p {
-  font-size: 18px;
-  font-family: sans-serif;
-  color: white;
-  text-align: left;
+    font-size: 18px;
+    font-family: sans-serif;
+    color: white;
+    text-align: left;
 }
