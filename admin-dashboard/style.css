@@ -1,0 +1,19 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: generalFont;
+    src: url(assets/HussarBoldWeb-bf92.woff);
+}
+
+h1 {
+    font-family: generalFont, Times New Roman;
+}
+
+
+.header{
+    color: blue;
+}
