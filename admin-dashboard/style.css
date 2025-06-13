@@ -14,6 +14,90 @@ h1 {
 }
 
 
-.header{
-    color: blue;
+
+
+.main-layout {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.header {
+    grid-area: 1/2/2/6;
+    background-color: red;
+    box-shadow: 10px 5px 5px grey;
+    position: relative;
+    /* to make the box-shadow work */
+}
+
+.sidebar {
+    grid-column: 1 /2;
+    grid-row: 1/6;
+    background-color: blue;
+}
+
+main {
+    background-color: beige;
+    grid-column: 2/6;
+    grid-row: 2/6;
+
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+
+}
+
+main>div {
+    background-color: pink;
+    padding: 5px;
+
+
+}
+
+.projects {
+    grid-area: 1/1/4/2;
+background-color: blanchedalmond;
+
+
+    display: flex;
+    justify-content: space-between;
+      flex-wrap: wrap;
+
+}
+
+.announcements {
+    background-color: aqua;
+
+        grid-area: 1/2/4/3;
+
+
+}
+
+.trending {
+            grid-area: 2/2/4/3;
+
+}
+
+.project-box{
+    
+        background-color: white;
+
+        border-radius: 15px;
+        border-left: 0.25rem solid orange;
+
+        height: 10vh;
+    /*
+      margin: 10px;
+    background-color: purple;
+    height: 100px;
+    width: 300px; 
+
+    height: 50px;
+  background: darkred;
+  flex: 0 1 30%; */
 }
