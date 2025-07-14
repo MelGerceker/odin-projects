@@ -61,36 +61,35 @@ main>div {
 
 .projects {
     grid-area: 1/1/4/2;
-background-color: blanchedalmond;
+    background-color: blanchedalmond;
 
 
     display: flex;
     justify-content: space-between;
-      flex-wrap: wrap;
+    flex-wrap: wrap;
 
 }
 
 .announcements {
     background-color: aqua;
 
-        grid-area: 1/2/4/3;
+    grid-area: 1/2/4/3;
 
 
 }
 
 .trending {
-            grid-area: 2/2/4/3;
+    grid-area: 2/2/4/3;
 
 }
 
-.project-box{
-    
-        background-color: white;
+.project-box {
 
-        border-radius: 15px;
-        border-left: 0.25rem solid orange;
+    background-color: white;
 
-        height: 10vh;
+    border-radius: 15px;
+    border-left: 0.25rem solid orange;
+
     /*
       margin: 10px;
     background-color: purple;
