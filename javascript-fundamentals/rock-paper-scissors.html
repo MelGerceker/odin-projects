@@ -16,7 +16,6 @@
 
         function getComputerChoice(computer) {
             let random = Math.floor(Math.random() * 3);
-            // 0, 1 or 2
 
             if (random == 0) {
                 return "rock";
@@ -28,17 +27,14 @@
                 return "error with the getComputerChoice logic";
             }
         }
-        //console.log(getComputerChoice());
 
         function getHumanChoice() {
             let human = prompt("Rock, paper or scissors?")
             return human.toLowerCase();
         }
-        //console.log(getHumanChoice());
 
         function playRound(humanChoice, computerChoice) {
 
-            // draw
             if (humanChoice == computerChoice) {
                 return "Draw! " + "You both played: " + humanChoice;
             }
@@ -55,17 +51,30 @@
                 computerScore = computerScore + 1;
                 return "You lose! " + computerChoice + " beats " + humanChoice;
             }
-
         }
 
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
+        function playGame() {
+            for (let i = 0; i < 5; i++) {
 
-        //playRound(humanSelection, computerSelection);
+                const humanSelection = getHumanChoice();
+                const computerSelection = getComputerChoice();
 
-        console.log(playRound(humanSelection, computerSelection))
-        console.log("your score: " + humanScore);
-        console.log("computer score: " + computerScore);
+                console.log(playRound(humanSelection, computerSelection));
+
+                console.log("your score: " + humanScore);
+                console.log("computer score: " + computerScore);
+            }
+
+            if (humanScore > computerScore) {
+                return "You won the game!";
+            } else if (humanScore < computerScore) {
+                return "You lost the game!";
+            } else {
+                return "The game is a draw!";
+            }
+        }
+
+        console.log(playGame());
 
     </script>
 </body>
