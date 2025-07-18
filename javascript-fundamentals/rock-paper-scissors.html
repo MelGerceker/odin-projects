@@ -8,8 +8,23 @@
 </head>
 
 <body>
+
+    <h1>Choose</h1>
+
+    <div class="button-container">
+        <button id="rock">Rock</button>
+        <button id="paper">PAPER</button>
+        <button id="scissors">SCISSORS</button>
+    </div>
+
     <script>
-        console.log("start!");
+
+        //TODO: add:
+        /*
+        Create three buttons, one for each selection. Add an event listener to the buttons that call your playRound function with the correct playerSelection every time a button is clicked. (you can keep the console.logs for this step)
+        Add a div for displaying results and change all of your console.logs into DOM methods.
+        Display the running score, and announce a winner of the game once one player reaches 5 points.
+        */
 
         let humanScore = 0;
         let computerScore = 0;
@@ -28,11 +43,26 @@
             }
         }
 
-        function getHumanChoice() {
-            let human = prompt("Rock, paper or scissors?")
-            return human.toLowerCase();
-        }
+        const btnList = document.querySelectorAll("button");
+        btnList.forEach((button) => {
+            button.addEventListener("click", () => {
+                const humanSelection = button.id;
+                console.log(humanSelection);
 
+                //console.log(playGame());
+
+                const computerSelection = getComputerChoice();
+                console.log(playRound(humanSelection, computerSelection));
+
+            });
+        });
+
+        /*
+                function getHumanChoice() {
+                    let human = prompt("Rock, paper or scissors?")
+                    return human.toLowerCase();
+                }
+        */
         function playRound(humanChoice, computerChoice) {
 
             if (humanChoice == computerChoice) {
@@ -56,7 +86,7 @@
         function playGame() {
             for (let i = 0; i < 5; i++) {
 
-                const humanSelection = getHumanChoice();
+                //const humanSelection = getHumanChoice();
                 const computerSelection = getComputerChoice();
 
                 console.log(playRound(humanSelection, computerSelection));
@@ -74,7 +104,7 @@
             }
         }
 
-        console.log(playGame());
+        //console.log(playGame());
 
     </script>
 </body>
