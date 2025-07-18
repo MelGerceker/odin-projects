@@ -17,9 +17,10 @@
         <button id="scissors">SCISSORS</button>
     </div>
 
+    <div id="scores"></div>
+
     <script>
 
-        //TODO: add:
         /*
         Create three buttons, one for each selection. Add an event listener to the buttons that call your playRound function with the correct playerSelection every time a button is clicked. (you can keep the console.logs for this step)
         Add a div for displaying results and change all of your console.logs into DOM methods.
@@ -49,23 +50,47 @@
                 const humanSelection = button.id;
                 console.log(humanSelection);
 
-                //console.log(playGame());
-
                 const computerSelection = getComputerChoice();
                 console.log(playRound(humanSelection, computerSelection));
 
             });
         });
 
-        /*
-                function getHumanChoice() {
-                    let human = prompt("Rock, paper or scissors?")
-                    return human.toLowerCase();
-                }
-        */
+        const scores = document.querySelector("#scores");
+
+        const humanDiv = document.createElement("div");
+        humanDiv.textContent = "Your score: " + humanScore;
+        scores.appendChild(humanDiv);
+
+        const computerDiv = document.createElement("div");
+        computerDiv.textContent = "Computer score: " + computerScore;
+        scores.appendChild(computerDiv);
+
+        const result = document.createElement("p");
+        scores.appendChild(result);
+
+
+        const winner = document.createElement("div");
+        winner.style.fontWeight = "bold";
+        scores.appendChild(winner);
+
         function playRound(humanChoice, computerChoice) {
 
+            if (humanScore == 5 || computerScore == 5) {
+                if (humanScore > computerScore) {
+                    winner.textContent = "You won the game!";
+                } else if (humanScore < computerScore) {
+                    winner.textContent = "You lost the game!";
+                } else {
+                    winner.textContent = "The game is a draw!";
+                }
+                return; // finishes game
+            }
+
+
+
             if (humanChoice == computerChoice) {
+                result.textContent = "Draw! " + "You both played: " + humanChoice;
                 return "Draw! " + "You both played: " + humanChoice;
             }
             // user wins
@@ -74,38 +99,44 @@
                 (humanChoice == "scissors" && computerChoice == "paper")
             ) {
                 humanScore += 1;
+                humanDiv.textContent = "Your score: " + humanScore;
+                result.textContent = "You win! " + humanChoice + " beats " + computerChoice;
                 return "You win! " + humanChoice + " beats " + computerChoice;
             }
             // computer wins
             else {
                 computerScore = computerScore + 1;
+                computerDiv.textContent = "Computer score: " + computerScore;
+                result.textContent = "You lose! " + computerChoice + " beats " + humanChoice;
                 return "You lose! " + computerChoice + " beats " + humanChoice;
             }
+
         }
 
-        function playGame() {
-            for (let i = 0; i < 5; i++) {
 
-                //const humanSelection = getHumanChoice();
-                const computerSelection = getComputerChoice();
-
-                console.log(playRound(humanSelection, computerSelection));
-
-                console.log("your score: " + humanScore);
-                console.log("computer score: " + computerScore);
-            }
-
-            if (humanScore > computerScore) {
-                return "You won the game!";
-            } else if (humanScore < computerScore) {
-                return "You lost the game!";
-            } else {
-                return "The game is a draw!";
-            }
-        }
-
-        //console.log(playGame());
-
+        /*
+                function playGame() {
+                    for (let i = 0; i < 5; i++) {
+        
+                        //const humanSelection = getHumanChoice();
+                        const computerSelection = getComputerChoice();
+        
+                        console.log(playRound(humanSelection, computerSelection));
+        
+                        console.log("your score: " + humanScore);
+                        console.log("computer score: " + computerScore);
+                    }
+        
+                    if (humanScore > computerScore) {
+                        return "You won the game!";
+                    } else if (humanScore < computerScore) {
+                        return "You lost the game!";
+                    } else {
+                        return "The game is a draw!";
+                    }
+                }
+        
+        */
     </script>
 </body>
 
