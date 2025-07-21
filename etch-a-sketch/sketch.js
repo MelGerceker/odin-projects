@@ -7,12 +7,10 @@ function resizeFunction() {
     let sideCount = prompt("Enter the number of squares per side (max 100):", "16");
     sideCount = parseInt(sideCount);
 
-    // do i do amount * amount sinxxe the i =256 when one amount = 16
     // Validate input
-
     if (isNaN(sideCount) || sideCount < 1 || sideCount > 100) {
         alert("Please enter a number between 1 and 100.");
-        return;
+        return resizeFunction();
     }
 
     // Clear existing grid
