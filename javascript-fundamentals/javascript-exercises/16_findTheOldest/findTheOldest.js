@@ -1,14 +1,17 @@
-const findTheOldest = function (array) {
+const findTheOldest = function (people) {
 
-    let age = array.map((people) => people.yearOfDeath - people.yearOfBirth);
+    return people.reduce((oldest, person) => {
 
-    const oldestAge =  Math.max(...age)
+        // Get current year if no year of death 
+        const currentYear = new Date().getFullYear();
 
-    return oldestAge;
+        const personAge = (person.yearOfDeath || currentYear) - person.yearOfBirth;
+        const oldestAge = (oldest.yearOfDeath || currentYear) - oldest.yearOfBirth;
+
+        return personAge > oldestAge ? person : oldest;
+    });
 
 };
-
-//console.log(findTheOldest(people));
 
 // Do not edit below this line
 module.exports = findTheOldest;
